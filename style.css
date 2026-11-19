@@ -90,11 +90,11 @@
     --accent: #ffd166;          /* Highlight color (sunny yellow). Used for headings inside the bot's replies and the 3rd typing dot. */
 
     /* ----- Backgrounds & text ----- */
-    --background: #0f1030;      /* The color behind the whole page (dark navy). */
-    --surface: #1b1d44;         /* The color of the big cards: the chat box. */
-    --surface-2: #262a5a;       /* A slightly lighter color for "inner" areas: the bot's message bubbles and the typing boxes. */
-    --text-primary: #f2f1ff;    /* Main text color (almost white). If you make the backgrounds light, make this dark! */
-    --text-secondary: #a7abdb;  /* Softer text color (light lavender) for labels and small notes. */
+    --background: #;      /* The color behind the whole page (dark navy). */
+    --surface: #989ce9;         /* The color of the big cards: the chat box. */
+    --surface-2: #d6eb81;       /* A slightly lighter color for "inner" areas: the bot's message bubbles and the typing boxes. */
+    --text-primary: #f6a2e3;    /* Main text color (almost white). If you make the backgrounds light, make this dark! */
+    --text-secondary: #1122db;  /* Softer text color (light lavender) for labels and small notes. */
 
     /* ----- The emoji your assistant uses as its face ----- */
     /* --bot-face: "🤖"; */       /* Shown in the round badge at the top AND next to every bot message. Swap in any emoji, like "🦄", "🐱" or "🌟". Keep the quotation marks! */
@@ -105,14 +105,15 @@
        3. Search "Picture version" and uncomment the two rules under it
           (one for the top badge, one for the bot's messages).
        To go back to an emoji, undo all three steps. */
-    --bot-face: url("assets/OIP.jpeg"); /* Your picture: the folder name, a slash, then the file name. */
+    --bot-face: url("assets/sheldon.jpg"); /* Your picture: the folder name, a slash, then the file name. */
 
     /* ----- Motion ----- */
     --transition-speed: 0.25s;  /* How fast things smoothly change, like a button lifting when you hover over it. Bigger = slower (try 0.6s). */
 
     /* ----- (You usually don't need to touch these) ----- */
     --brand-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* A smooth fade from your primary color to your secondary color. 135deg makes it run diagonally, from top-left to bottom-right. Try 90deg for left-to-right. */
-    --border: rgba(54, 13, 13, 0.08);           /* The color of thin outlines around cards and bubbles. The 0.08 at the end makes it barely visible. */
+    --border: rgb(228, 197, 219); 
+         /* The color of thin outlines around cards and bubbles. The 0.08 at the end makes it barely visible. */
     --shadow: 0 20px 45px rgba(0, 0, 0, 0.45);  /* The shadow under the header and cards. The numbers are: sideways shift, downward shift (20px), blur amount (45px), then the shadow color. */
 }
 
@@ -131,7 +132,7 @@
 
 /* body is the whole visible page. */
 body {
-    font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif; /* The font for all text. The browser uses the first one it has. Nunito is loaded from Google Fonts in index.html; the others are backups. */
+    font-family: Cursive', 'Times New Roman', Georgia, sans-serif;  /* The font for all text. The browser uses the first one it has. Nunito is loaded from Google Fonts in index.html; the others are backups. */
     color: var(--text-primary);  /* Default text color for the whole page. */
     line-height: 1.6;            /* Space between lines of text: 1.6 times the text size. Bigger = airier. */
     min-height: 100vh;           /* The page is always at least as tall as the browser window. */
@@ -141,11 +142,11 @@ body {
        Each radial-gradient is a round, blurry glow. Read them like:
        radial-gradient(SIZE at LEFT-POSITION TOP-POSITION, GLOW COLOR, fades to transparent by X%).
        The first glow in the list is drawn on top. */
-    background:
+    background: #008080;
         radial-gradient(60rem 60rem at 12% -10%, rgba(139, 92, 255, 0.35), transparent 60%),  /* Purple glow peeking in from the top-left. */
         radial-gradient(50rem 50rem at 110% 10%, rgba(224, 92, 200, 0.28), transparent 55%), /* Pink glow from just off the right edge. */
         radial-gradient(45rem 45rem at 50% 120%, rgba(255, 209, 102, 0.14), transparent 60%),/* Faint yellow glow from below the bottom. */
-        var(--background);       /* The solid background color underneath all the glows. */
+        var(--background)#48d1cc;     /* The solid background color underneath all the glows. */
     background-attachment: fixed; /* Keeps the glows still while you scroll, instead of scrolling away with the page. */
 }
 
@@ -160,8 +161,8 @@ body {
     overflow: hidden;           /* Hides anything that pokes outside the header (so the shine doesn't spill out). */
     padding: 2.5rem 2rem 2.75rem; /* Space inside the banner: 2.5rem top, 2rem left and right, 2.75rem bottom. Bigger = taller banner. */
     text-align: center;         /* Centers the title and text. Try left or right. */
-    background: var(--brand-gradient); /* Fills the banner with your primary-to-secondary gradient. */
-    border-bottom: 1px solid var(--border); /* A thin line along the bottom: 1px thick, solid, in the border color. */
+    background:#43f5a0; var(--brand-gradient); /* Fills the banner with your primary-to-secondary gradient. */
+    border-bottom: 5px solid var(--border); /* A thin line along the bottom: 1px thick, solid, in the border color. */
     box-shadow: var(--shadow);  /* Adds the shadow under the banner. */
 }
 
@@ -171,7 +172,7 @@ body {
     content: "";                /* Required for ::after to appear. It is empty because it is just a decoration. */
     position: absolute;         /* Places this layer freely on top of the header... */
     inset: 0;                   /* ...stretched to touch all four edges. */
-    background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.25) 50%, transparent 60%); /* A thin diagonal stripe of see-through white (the "shine"), with clear space on both sides. */
+    background: #ffd1dc; linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.25) 50%, transparent 60%); /* A thin diagonal stripe of see-through white (the "shine"), with clear space on both sides. */
     transform: translateX(-120%); /* Starts the shine pushed off to the left, out of sight. */
     animation: shine 6s ease-in-out infinite; /* Runs the "shine" animation below: 6 seconds per sweep, smooth start and stop, forever. Set to "none" to turn it off. */
 }
@@ -192,9 +193,9 @@ body {
     width: 74px;                /* Width of the circle. */
     height: 74px;               /* Height of the circle. Keep it the same as the width so it stays round. */
     margin-bottom: 0.75rem;     /* Space between the circle and the title below it. */
-    font-size: 2.4rem;          /* Size of the emoji face. */
+    font-size: 4.5rem;          /* Size of the emoji face. */
     border-radius: 50%;         /* Rounds the corners all the way, turning the square into a circle. Try 20% for a rounded square. */
-    background: rgba(255, 255, 255, 0.16); /* A see-through white fill. */
+    background: rgba(235, 17, 5, 0.16); /* A see-through white fill. */
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35), 0 8px 20px rgba(0, 0, 0, 0.3); /* Two shadows: "inset" draws a 2px white ring on the inside edge; the second is a soft dark shadow underneath. */
     animation: float 4s ease-in-out infinite; /* Runs the "float" animation below so the badge gently bobs up and down. */
 }
@@ -228,11 +229,11 @@ body {
 /* The big title ("Chatbot"). */
 .header h1 {
     position: relative;         /* Keeps the title above the shine layer. */
-    font-family: 'Baloo 2', 'Nunito', sans-serif; /* A rounder, bolder font for the title. Baloo 2 is loaded from Google Fonts in index.html. */
-    font-size: 2.6rem;          /* Title size. */
+    font-family: 'Times New Roman ', 'Cursive', sans-serif; /* A rounder, bolder font for the title. Baloo 2 is loaded from Google Fonts in index.html. */
+    font-size: 5.1rem;          /* Title size. */
     font-weight: 800;           /* How thick the letters are: 400 is normal, 700 is bold, 800 is extra bold. */
     letter-spacing: 0.5px;      /* Adds a little extra space between letters. */
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* A soft shadow behind the letters: 0 sideways, 3px down, 10px blur, light black. */
+    text-shadow: 0 3px 10px rgba(236, 255, 140, 0.892); /* A soft shadow behind the letters: 0 sideways, 3px down, 10px blur, light black. */
 }
 
 /* The line under the title ("Built by: ..."). */
@@ -295,7 +296,7 @@ body {
 .config-panel,
 .chat-container {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)), var(--surface); /* A faint white sheen fading from top to bottom (180deg), on top of the surface color. */
-    border: 1px solid var(--border); /* A thin outline around the card. */
+    border: 10px solid var(--border); /* A thin outline around the card. */
     border-radius: 20px;        /* Rounded corners. 0 = sharp corners, bigger = rounder. */
     box-shadow: var(--shadow);  /* The shadow under the card. */
     backdrop-filter: blur(6px); /* Blurs whatever is behind the card, for a frosted-glass effect. */
@@ -340,7 +341,7 @@ body {
     width: 100%;                /* Each box stretches the full width of the panel. */
     padding: 0.85rem 1rem;      /* Space inside the box around the text. */
     background: var(--surface-2); /* Box fill color. */
-    border: 1.5px solid transparent; /* An invisible border that turns colored when you click in (see :focus below). */
+    border: 10px solid transparent; /* An invisible border that turns colored when you click in (see :focus below). */
     border-radius: 12px;        /* Rounded corners. */
     color: var(--text-primary); /* Color of the text you type. */
     font-family: inherit;       /* Use the same font as the rest of the page (boxes don't do this on their own). */
@@ -378,7 +379,7 @@ body {
    ===================================================================== */
 .info-box {
     background: linear-gradient(135deg, rgba(139, 92, 255, 0.18), rgba(224, 92, 200, 0.14)); /* A faint purple-to-pink diagonal fill. */
-    border: 1px solid rgba(139, 92, 255, 0.4); /* A thin purple outline. */
+    border: 10px solid rgba(139, 92, 255, 0.4); /* A thin purple outline. */
     border-radius: 14px;        /* Rounded corners. */
     padding: 1rem 1.1rem;       /* Space inside the box. */
     margin-bottom: 1.35rem;     /* Space under the box. */
@@ -447,7 +448,7 @@ body {
     align-self: flex-start;     /* Keeps the bot's messages on the left side. */
     margin-left: 52px;          /* Leaves 52px of room on the left for the bot's round face. */
     background: var(--surface-2); /* Bubble fill color. */
-    border: 1px solid var(--border); /* Thin outline. */
+    border: 5px solid var(--border); /* Thin outline. */
     border-bottom-left-radius: 6px; /* Makes the bottom-left corner less round, like a speech-bubble "tail". */
 }
 /* The little round face next to each bot message. */
